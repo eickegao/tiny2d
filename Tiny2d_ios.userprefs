@@ -1,0 +1,43 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExEnCore/Input/Touch/TouchCollection.cs">
+    <Files>
+      <File FileName="ExEn_ios/Graphics/GraphicsDeviceCommon.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Graphics/IGraphicsDeviceService.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Graphics/SpriteBatchOpenGL.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Graphics/SpriteFontBitmap.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Graphics/SurfaceFormat.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Graphics/Texture2D.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Graphics/Texture2DOpenGL.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Media/MediaPlayer.cs" Line="1" Column="1" />
+      <File FileName="ExEnCore/BoundingBox.cs" Line="1" Column="1" />
+      <File FileName="ExEnCore/ExEnScaler.cs" Line="145" Column="5" />
+      <File FileName="ExEnCore/Input/Touch/TouchCollection.cs" Line="9" Column="3" />
+      <File FileName="ExEn_ios/ExEnEmTouchGameView.cs" Line="54" Column="38" />
+      <File FileName="ExEn_ios/Audio/SoundEffectInstance.cs" Line="195" Column="50" />
+      <File FileName="ExEn_ios/Content/BuiltInLoaders.cs" Line="42" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>R.selectBox.position</Value>
+        </State>
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/projects/playwav/playwav/src/Games/FruitSlots/FruitSlotsGame.cs" line="64" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
