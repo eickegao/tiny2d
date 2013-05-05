@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{408B170B-BAFC-4638-9211-E59125830E2E}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Xna.Framework</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AssemblyName>ExEnAndroid</AssemblyName>
+    <TargetFrameworkVersion>v2.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <DefineConstants>ANDROID</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="OpenTK" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Game\GraphicsDeviceManager.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="ExEnAndroidActivity.cs" />
+    <Compile Include="Content\BuiltInLoaders.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Graphics\Texture2D.cs" />
+    <Compile Include="Content\ContentHelpers.cs" />
+    <Compile Include="Audio\SoundEffect.cs" />
+    <Compile Include="Audio\SoundEffectInstance.cs" />
+    <Compile Include="Media\Song.cs" />
+    <Compile Include="Media\MediaPlayer.cs" />
+    <Compile Include="ExEnAndroidSurfaceView.cs" />
+    <Compile Include="ExEnLog.cs" />
+    <Compile Include="Game\GameCommon.cs" />
+    <Compile Include="Game\GameWindow.cs" />
+    <Compile Include="Game\GraphicsDeviceManagerCommon.cs" />
+    <Compile Include="GameComponents\DrawableGameComponent.cs" />
+    <Compile Include="GameComponents\GameComponent.cs" />
+    <Compile Include="GameComponents\GameComponentCollection.cs" />
+    <Compile Include="GameComponents\GameServiceContainer.cs" />
+    <Compile Include="GameComponents\IDrawable.cs" />
+    <Compile Include="GameComponents\IGameComponent.cs" />
+    <Compile Include="GameComponents\IUpdateable.cs" />
+    <Compile Include="Graphics\States\BlendState.cs" />
+    <Compile Include="Graphics\States\DepthStencilState.cs" />
+    <Compile Include="Graphics\States\RasterizerState.cs" />
+    <Compile Include="Graphics\States\SamplerState.cs" />
+    <Compile Include="Graphics\GraphicsDeviceCommon.cs" />
+    <Compile Include="Graphics\IGraphicsDeviceService.cs" />
+    <Compile Include="Graphics\SpriteBatchOpenGL.cs" />
+    <Compile Include="Graphics\SpriteFontBitmap.cs" />
+    <Compile Include="Graphics\Texture2DOpenGL.cs" />
+    <Compile Include="Input\Touch\TouchInputManager.cs" />
+    <Compile Include="Input\Touch\TouchPanel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExEnCore\ExEnCore_android.csproj">
+      <Project>{6622CF5F-D0D3-4154-A426-D334799ADC0E}</Project>
+      <Name>ExEnCore_android</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\" />
+    <Folder Include="GameComponents\" />
+    <Folder Include="Graphics\" />
+    <Folder Include="Content\" />
+    <Folder Include="Graphics\States\" />
+    <Folder Include="Audio\" />
+    <Folder Include="Media\" />
+    <Folder Include="Input\Touch\" />
+  </ItemGroup>
+</Project>

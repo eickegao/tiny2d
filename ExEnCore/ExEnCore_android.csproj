@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Xna.Framework</RootNamespace>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AssemblyName>ExEnCore</AssemblyName>
+    <TargetFrameworkVersion>v2.1</TargetFrameworkVersion>
+    <ProjectGuid>{6622CF5F-D0D3-4154-A426-D334799ADC0E}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <DefineConstants>ANDROID</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="OpenTK" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="BoundingBox.cs" />
+    <Compile Include="Content\ContentLoadException.cs" />
+    <Compile Include="Content\ContentSerializerAttribute.cs" />
+    <Compile Include="Content\ContentSerializerIgnoreAttribute.cs" />
+    <Compile Include="Curve.cs" />
+    <Compile Include="CurveKey.cs" />
+    <Compile Include="CurveKeyCollection.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="GameLoop.cs" />
+    <Compile Include="GameTime.cs" />
+    <Compile Include="Game\IGraphicsDeviceManager.cs" />
+    <Compile Include="Graphics\Color.cs" />
+    <Compile Include="Graphics\NamedColors.cs" />
+    <Compile Include="Graphics\PresentationParameters.cs" />
+    <Compile Include="Graphics\Viewport.cs" />
+    <Compile Include="Input\Buttons.cs" />
+    <Compile Include="Input\ButtonState.cs" />
+    <Compile Include="Input\DummyGamePad.cs" />
+    <Compile Include="Input\DummyGamePadState.cs" />
+    <Compile Include="Input\KeyboardState.cs" />
+    <Compile Include="Input\Keys.cs" />
+    <Compile Include="Input\MouseState.cs" />
+    <Compile Include="MathHelper.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quaternion.cs" />
+    <Compile Include="Ray.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="Vector2.cs" />
+    <Compile Include="Vector3.cs" />
+    <Compile Include="Vector4.cs" />
+    <Compile Include="Content\ContentManager.cs" />
+    <Compile Include="ExEnFractionMaths.cs" />
+    <Compile Include="ExEnScaler.cs" />
+    <Compile Include="Input\Touch\TouchCollection.cs" />
+    <Compile Include="Input\Touch\TouchLocation.cs" />
+    <Compile Include="Input\Touch\TouchPanelCapabilities.cs" />
+  </ItemGroup>
+</Project>

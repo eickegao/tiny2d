@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45A1D6BD-C3A6-4AB8-A425-31F873DA0733}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ExEn_ios</RootNamespace>
+    <AssemblyName>ExEn_ios</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="OpenTK" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="BatteryChargeStatus.cs" />
+    <Compile Include="ExEnEmTouchApplication.cs" />
+    <Compile Include="ExEnEmTouchGameView.cs" />
+    <Compile Include="PerformanceCounter.cs" />
+    <Compile Include="PowerLineStatus.cs" />
+    <Compile Include="PowerStatus.cs" />
+    <Compile Include="ReusableItemList.cs" />
+    <Compile Include="Audio\AudioSessionManager.cs" />
+    <Compile Include="Audio\SoundEffect.cs" />
+    <Compile Include="Audio\SoundEffectFireAndForget.cs" />
+    <Compile Include="Audio\SoundEffectInstance.cs" />
+    <Compile Include="Content\BuiltInLoaders.cs" />
+    <Compile Include="Content\ContentHelpers.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameCommon.cs" />
+    <Compile Include="Game\GameWindow.cs" />
+    <Compile Include="Game\GraphicsDeviceManager.cs" />
+    <Compile Include="Game\GraphicsDeviceManagerCommon.cs" />
+    <Compile Include="GameComponents\DrawableGameComponent.cs" />
+    <Compile Include="GameComponents\GameComponent.cs" />
+    <Compile Include="GameComponents\GameComponentCollection.cs" />
+    <Compile Include="GameComponents\GameServiceContainer.cs" />
+    <Compile Include="GameComponents\IDrawable.cs" />
+    <Compile Include="GameComponents\IGameComponent.cs" />
+    <Compile Include="GameComponents\IUpdateable.cs" />
+    <Compile Include="Graphics\GraphicsDeviceCommon.cs" />
+    <Compile Include="Graphics\IGraphicsDeviceService.cs" />
+    <Compile Include="Graphics\SpriteBatchOpenGL.cs" />
+    <Compile Include="Graphics\SpriteFontBitmap.cs" />
+    <Compile Include="Graphics\SurfaceFormat.cs" />
+    <Compile Include="Graphics\Texture2D.cs" />
+    <Compile Include="Graphics\Texture2DOpenGL.cs" />
+    <Compile Include="Graphics\States\BlendState.cs" />
+    <Compile Include="Graphics\States\DepthStencilState.cs" />
+    <Compile Include="Graphics\States\RasterizerState.cs" />
+    <Compile Include="Graphics\States\SamplerState.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="Input\Touch\TouchInputManager.cs" />
+    <Compile Include="Input\Touch\TouchPanel.cs" />
+    <Compile Include="Media\MediaPlayer.cs" />
+    <Compile Include="Media\Song.cs" />
+    <Compile Include="Storage\StorageContainer.cs" />
+    <Compile Include="Storage\StorageDevice.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExEn_ios.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExEnCore\ExEnCore_ios.csproj">
+      <Project>{4740C1D7-5EE0-43AC-A862-45B8D245FC43}</Project>
+      <Name>ExEnCore_ios</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
