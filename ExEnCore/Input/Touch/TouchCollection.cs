@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace Microsoft.Xna.Framework.Input.Touch
 {
 	public struct TouchCollection : IList<TouchLocation>
-	{
+	{	
 		bool isConnected;
 		public bool IsConnected { get { return isConnected; } }
 

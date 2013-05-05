@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ExEnCore/Input/Touch/TouchCollection.cs">
     <Files>
       <File FileName="ExEn_ios/Graphics/GraphicsDeviceCommon.cs" Line="1" Column="1" />
@@ -11,15 +11,19 @@
       <File FileName="ExEn_ios/Graphics/Texture2DOpenGL.cs" Line="1" Column="1" />
       <File FileName="ExEn_ios/Media/MediaPlayer.cs" Line="1" Column="1" />
       <File FileName="ExEnCore/BoundingBox.cs" Line="1" Column="1" />
-      <File FileName="ExEnCore/ExEnScaler.cs" Line="145" Column="5" />
-      <File FileName="ExEnCore/Input/Touch/TouchCollection.cs" Line="9" Column="3" />
-      <File FileName="ExEn_ios/ExEnEmTouchGameView.cs" Line="54" Column="38" />
-      <File FileName="ExEn_ios/Audio/SoundEffectInstance.cs" Line="195" Column="50" />
-      <File FileName="ExEn_ios/Content/BuiltInLoaders.cs" Line="42" Column="40" />
+      <File FileName="ExEnCore/ExEnScaler.cs" Line="1" Column="1" />
+      <File FileName="ExEnCore/Input/Touch/TouchCollection.cs" Line="8" Column="4" />
+      <File FileName="ExEn_ios/ExEnEmTouchGameView.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Audio/SoundEffectInstance.cs" Line="1" Column="1" />
+      <File FileName="ExEn_ios/Content/BuiltInLoaders.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="Tiny2d_ios" expanded="True" selected="True">
+            <Node name="SceneItems" expanded="True" />
+          </Node>
+        </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" selected="True" />
