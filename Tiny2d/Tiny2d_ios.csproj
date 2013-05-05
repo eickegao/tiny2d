@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{440C7F9E-F8F6-4A42-8558-56CC0C20B864}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Tiny2d</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Tiny2d</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="SceneItems\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\ExEn_ios\ExEn_ios.csproj">
+      <Project>{45A1D6BD-C3A6-4AB8-A425-31F873DA0733}</Project>
+      <Name>ExEn_ios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExEnCore\ExEnCore_ios.csproj">
+      <Project>{4740C1D7-5EE0-43AC-A862-45B8D245FC43}</Project>
+      <Name>ExEnCore_ios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SceneItems\AnimatedSprite.cs" />
+    <Compile Include="SceneItems\Camera.cs" />
+    <Compile Include="SceneItems\CompositeEntity.cs" />
+    <Compile Include="SceneItems\ContentImporter1.cs" />
+    <Compile Include="SceneItems\IAnimation.cs" />
+    <Compile Include="SceneItems\IAnimationDirector.cs" />
+    <Compile Include="SceneItems\ISubItemCollection.cs" />
+    <Compile Include="SceneItems\ParticleEffect.cs" />
+    <Compile Include="SceneItems\Polygon.cs" />
+    <Compile Include="SceneItems\PostProcessAnimation.cs" />
+    <Compile Include="SceneItems\SceneItem.cs" />
+    <Compile Include="SceneItems\Sprite.cs" />
+    <Compile Include="SceneItems\TemplateLinkedItem.cs" />
+    <Compile Include="SceneItems\TextItem.cs" />
+    <Compile Include="SceneItems\TileGrid.cs" />
+    <Compile Include="SceneItems\TileSheet.cs" />
+    <Compile Include="SceneItems\AnimationClasses\AnimationFrame.cs" />
+    <Compile Include="SceneItems\AnimationClasses\AnimationInfo.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeAnimation.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeBone.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeBoneTransform.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeKeyFrame.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\SceneItemRefConverter.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\SubItemRefConverter.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\Emitter.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\EmitterShape.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\EmitterShapeType.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\OverLifeSettings.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\Particle.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\ParticleOrientation.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\ParticleType.cs" />
+    <Compile Include="SceneItems\TileGridClasses\Tile.cs" />
+    <Compile Include="SceneItems\TileGridClasses\TileLayer.cs" />
+    <Compile Include="SceneItems\TypeConverters\LayerConverter.cs" />
+  </ItemGroup>
+</Project>

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExEnCore_ios", "ExEnCore\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExEn_ios", "ExEn_ios\ExEn_ios.csproj", "{45A1D6BD-C3A6-4AB8-A425-31F873DA0733}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiny2d_ios", "Tiny2d\Tiny2d_ios.csproj", "{440C7F9E-F8F6-4A42-8558-56CC0C20B864}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -15,6 +17,18 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Release|iPhone.Build.0 = Release|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{440C7F9E-F8F6-4A42-8558-56CC0C20B864}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{45A1D6BD-C3A6-4AB8-A425-31F873DA0733}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{45A1D6BD-C3A6-4AB8-A425-31F873DA0733}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{45A1D6BD-C3A6-4AB8-A425-31F873DA0733}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
@@ -33,7 +47,7 @@ Global
 		{4740C1D7-5EE0-43AC-A862-45B8D245FC43}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ExEnCore\ExEnCore_ios.csproj
+		StartupItem = Tiny2d\Tiny2d_ios.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.TabWidth = 4
