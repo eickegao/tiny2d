@@ -86,5 +86,6 @@
     <Compile Include="SceneItems\TileGridClasses\Tile.cs" />
     <Compile Include="SceneItems\TileGridClasses\TileLayer.cs" />
     <Compile Include="SceneItems\TypeConverters\LayerConverter.cs" />
+    <Compile Include="BaseObject.cs" />
   </ItemGroup>
 </Project>
