@@ -39,6 +39,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="SceneItems\" />
+    <Folder Include="Components\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -91,5 +92,10 @@
     <Compile Include="GameAsset.cs" />
     <Compile Include="GameCore.cs" />
     <Compile Include="SceneManager.cs" />
+    <Compile Include="GameScene.cs" />
+    <Compile Include="Components\TestComponent.cs" />
+    <Compile Include="ComponentTypeContainer.cs" />
+    <Compile Include="Components\SceneComponent.cs" />
+    <Compile Include="Components\GameObjComponent.cs" />
   </ItemGroup>
 </Project>

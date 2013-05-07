@@ -7,9 +7,8 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
-//using IceCream.Drawing;
 
-namespace IceCream.SceneItems
+namespace Tiny2d.SceneItems
 {
     public class Camera : SceneItem
     {
