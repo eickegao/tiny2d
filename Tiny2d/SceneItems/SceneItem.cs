@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -9,14 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
-//using IceCream.Components;
+using Tiny2d.Components;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Reflection;
-//using IceCream.SceneItems;
-//using IceCream.Attributes;
 
-namespace Tiny2d
+namespace Tiny2d.SceneItems
 {
     public class SceneItem : BaseObject
     {
@@ -35,8 +32,8 @@ namespace Tiny2d
         private Vector2 _pivot;
         private bool _isPivotRelative;
         private Vector2 _scale = Vector2.One;
-        private List<IceComponent> _components = new List<IceComponent>();
-        private IceScene _sceneParent = null; // null if global for now        
+		private List<GameObjComponent> _components = new List<GameObjComponent>();
+        private GameScene _sceneParent = null; // null if global for now        
         private Rectangle _boundingRect = new Rectangle(0, 0, 20, 20);
         private uint _objectType;
         internal List<LinkFuse> fuses = new List<LinkFuse>();
@@ -311,7 +308,7 @@ namespace Tiny2d
             target.Components.Clear();
             foreach (var item in Components)
             {
-                target.AddComponent((IceComponent)item.GetCopy());
+				target.AddComponent((GameObjComponent)item.GetCopy());
             }
         }
 
@@ -320,10 +317,10 @@ namespace Tiny2d
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T GetComponent<T>() where T : IceComponent
+        public T GetComponent<T>() where T : GameObjComponent
         {
             T local = default(T);
-            foreach (IceComponent component in Components)
+			foreach (GameObjComponent component in Components)
             {
                 local = component as T;
                 if (local != null)
@@ -402,7 +399,7 @@ namespace Tiny2d
         {
             SetupLinkFuses();
             UpdateBoundingRect();
-            foreach (IceComponent _component in Components)
+			foreach (GameObjComponent _component in Components)
             {
                 _component.SetOwner(this);
                 _component.OnRegister();
@@ -412,7 +409,7 @@ namespace Tiny2d
 
         internal virtual void OnUnRegister()
         {
-            foreach (IceComponent _component in Components)
+			foreach (GameObjComponent _component in Components)
             {
                 _component.OnUnRegister();
             }
@@ -421,7 +418,7 @@ namespace Tiny2d
             _isRegistered = false;
         }
 
-        public void AddComponent(IceCream.Components.IceComponent component)
+		public void AddComponent(GameObjComponent component)
         {
             component.SetOwner(this);
             if (IsRegistered)

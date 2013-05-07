@@ -1,40 +1,20 @@
-#if XNATOUCH
-using XnaTouch.Framework;
-using XnaTouch.Framework.Audio;
-using XnaTouch.Framework.Content;
-using XnaTouch.Framework.GamerServices;
-using XnaTouch.Framework.Graphics;
-using XnaTouch.Framework.Input;
-using XnaTouch.Framework.Media;
-using XnaTouch.Framework.Net;
-using XnaTouch.Framework.Storage;
-#else
 using Microsoft.Xna.Framework;
-
 using Microsoft.Xna.Framework.Content;
-
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
-
-
-#endif
 
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
-using IceCream.Drawing;
 using System.Xml.Serialization;
 using System.Reflection;
 using System.Xml;
-using IceCream.Components;
-using IceCream.SceneItems.ParticlesClasses;
-#if !XNATOUCH
-using IceCream.Drawing.IceEffects;
-#endif
+using Tiny2d.Components;
+using Tiny2d.SceneItems.ParticlesClasses;
 
-namespace IceCream.SceneItems
+
+namespace Tiny2d.SceneItems
 {
     public interface IAnimation
     {

@@ -61,7 +61,6 @@
     <Compile Include="SceneItems\IAnimationDirector.cs" />
     <Compile Include="SceneItems\ISubItemCollection.cs" />
     <Compile Include="SceneItems\ParticleEffect.cs" />
-    <Compile Include="SceneItems\Polygon.cs" />
     <Compile Include="SceneItems\PostProcessAnimation.cs" />
     <Compile Include="SceneItems\SceneItem.cs" />
     <Compile Include="SceneItems\Sprite.cs" />
@@ -93,9 +92,9 @@
     <Compile Include="GameCore.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="GameScene.cs" />
-    <Compile Include="Components\TestComponent.cs" />
     <Compile Include="ComponentTypeContainer.cs" />
     <Compile Include="Components\SceneComponent.cs" />
     <Compile Include="Components\GameObjComponent.cs" />
+    <Compile Include="IDeepCopy.cs" />
   </ItemGroup>
 </Project>

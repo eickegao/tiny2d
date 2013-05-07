@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace IceCream.SceneItems.AnimationClasses
+namespace Tiny2d.SceneItems.AnimationClasses
 {
     public struct AnimationFrame
     {

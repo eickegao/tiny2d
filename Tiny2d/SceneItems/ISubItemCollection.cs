@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace IceCream.SceneItems
+namespace Tiny2d.SceneItems
 {
     public interface ISubItemCollection
     {
