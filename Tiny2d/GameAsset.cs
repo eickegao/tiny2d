@@ -18,7 +18,7 @@ namespace Tiny2d
 		Local,
 	}
 
-	public abstract class Tiny2dAsset
+	public abstract class GameAsset
 	{
 		/// <summary>
 		/// Gets or Sets the Name of the Asset

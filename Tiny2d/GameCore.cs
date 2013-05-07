@@ -12,7 +12,7 @@ using IceCream.SceneItems;
 namespace Tiny2d
 {
 	
-	public static class Tiny2dCore
+	public static class GameCore
 	{
 		#region Fields
 		
