@@ -1,24 +1,7 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="AppStore|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Tiny2d/SceneItems/Camera.cs">
     <Files>
-      <File FileName="ExEn_ios/Graphics/GraphicsDeviceCommon.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Graphics/IGraphicsDeviceService.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Graphics/SpriteBatchOpenGL.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Graphics/SpriteFontBitmap.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Graphics/SurfaceFormat.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Graphics/Texture2D.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Graphics/Texture2DOpenGL.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Media/MediaPlayer.cs" Line="1" Column="1" />
-      <File FileName="ExEnCore/BoundingBox.cs" Line="1" Column="1" />
-      <File FileName="ExEnCore/ExEnScaler.cs" Line="1" Column="1" />
-      <File FileName="ExEnCore/Input/Touch/TouchCollection.cs" Line="8" Column="4" />
-      <File FileName="ExEn_ios/ExEnEmTouchGameView.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Audio/SoundEffectInstance.cs" Line="1" Column="1" />
-      <File FileName="ExEn_ios/Content/BuiltInLoaders.cs" Line="1" Column="1" />
-      <File FileName="Tiny2d/SceneItems/SceneItem.cs" Line="39" Column="48" />
-      <File FileName="Tiny2d/BaseObject.cs" Line="11" Column="17" />
-      <File FileName="Tiny2d/SceneItems/ContentImporter1.cs" Line="26" Column="15" />
       <File FileName="Tiny2d/SceneItems/Camera.cs" Line="2" Column="31" />
     </Files>
     <Pads>
