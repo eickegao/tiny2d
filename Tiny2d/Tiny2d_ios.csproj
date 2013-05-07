@@ -90,5 +90,6 @@
     <Compile Include="SceneBase.cs" />
     <Compile Include="GameAsset.cs" />
     <Compile Include="GameCore.cs" />
+    <Compile Include="SceneManager.cs" />
   </ItemGroup>
 </Project>
