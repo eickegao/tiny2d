@@ -88,5 +88,6 @@
     <Compile Include="SceneItems\TypeConverters\LayerConverter.cs" />
     <Compile Include="BaseObject.cs" />
     <Compile Include="Tiny2dCore.cs" />
+    <Compile Include="Tiny2dAsset.cs" />
   </ItemGroup>
 </Project>
