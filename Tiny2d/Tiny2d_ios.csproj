@@ -91,7 +91,6 @@
     <Compile Include="GameCore.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="GameScene.cs" />
-    <Compile Include="ComponentTypeContainer.cs" />
     <Compile Include="IDeepCopy.cs" />
   </ItemGroup>
 </Project>
