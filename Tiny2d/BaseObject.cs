@@ -18,7 +18,7 @@ namespace Tiny2d
 		#region Fields
 		private string _name;
 		private int _id;
-		private const int _tag;
+		private int _tag;
 		private int _zOrder;
 
 		private float _rotation;
@@ -52,6 +52,31 @@ namespace Tiny2d
 			set { _id = value;}
 		}
 
+		public int Tag
+		{
+			get { return _tag;}
+			set { _tag = value;}
+		}
+
+		public int ZOrder
+		{
+			get { return _zOrder;}
+		}
+		
+		private float _rotation;
+		private float _scaleX;
+		private float _scaleY;
+		private Point _position;
+		private bool _isRunning;
+		private bool _isEnable;
+		private Point _anchorPoint;
+		private int _width;
+		private int _height;
+		
+		private List<BaseObject> _children;
+		private bool _isVisible;
+		private BaseObject _parent;
+		private object _userData;
 		public IList<BaseObject> Children {
 			get { return _children; }
 		}
@@ -59,37 +84,8 @@ namespace Tiny2d
 	}
 
 	public class CocosNode {
-		public const int CocosNodeTagInvalid = -1;
-		
-		private int _zorder;
-		private Camera _camera;
-		private PointF _transformAnchor;
-		private float _rotation;
-		private bool _isTransformDirty;
-		private float _scaleX;
-		private float _scaleY;
-		private PointF _position;
-		private PointF _anchorPoint;
-		private bool _isRelativeAnchorPoint;
-		private SizeF _contentSize;
-		private CGAffineTransform _transform;
-		
-		private List<CocosNode> _children;
-		
-		public IList<CocosNode> Children {
-			get { return _children; }
-		}
-		
-		public bool IsRunning { get; protected set; }
-		
-		public int ZOrder {
-			get { return _zorder; }
-		}
-		public float VertexZ { get; set; }
 
-		public GridBase Grid { get; set; }
-		public bool Visible { get; set; }
-		public CocosNode Parent { get; set; }
+
 		public int Tag { get; set; }
 		public object UserData { get; set; }
 		
