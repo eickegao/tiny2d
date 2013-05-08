@@ -10,27 +10,25 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Tiny2d
 {
-	/// <summary>
-	/// A base class for anything with a name in the Tiny2d framework
-	/// </summary>
 	public class BaseObject
 	{
 		#region Fields
 		private string _name;
-		internal int id;
+		private int _id;
 		#endregion
 		
 		#region Properties
-		/// <summary>
-		/// Gets or Sets the name used to indentify the item
-		/// </summary>
-		#if WINDOWS 
-		[CategoryAttribute("Design"), DescriptionAttribute("Indicates the name used to indentify the item"),Browsable(true) ]
-		#endif
+
 		public string Name
 		{
 			get { return _name; }
 			set { _name = value; }
+		}
+
+		public int ID
+		{
+			get { return _id;}
+			set { _id = value;}
 		}
 
 		#endregion
