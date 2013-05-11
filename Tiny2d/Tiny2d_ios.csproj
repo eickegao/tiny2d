@@ -61,7 +61,6 @@
     <Compile Include="SceneItems\ISubItemCollection.cs" />
     <Compile Include="SceneItems\ParticleEffect.cs" />
     <Compile Include="SceneItems\PostProcessAnimation.cs" />
-    <Compile Include="SceneItems\SceneItem.cs" />
     <Compile Include="SceneItems\Sprite.cs" />
     <Compile Include="SceneItems\TemplateLinkedItem.cs" />
     <Compile Include="SceneItems\TextItem.cs" />

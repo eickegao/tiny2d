@@ -1,14 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="AppStore|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Tiny2d/SceneItems/Camera.cs">
     <Files>
-      <File FileName="Tiny2d/SceneItems/Camera.cs" Line="2" Column="31" />
+      <File FileName="Tiny2d/BaseObject.cs" Line="309" Column="19" />
+      <File FileName="Tiny2d/GameAsset.cs" Line="21" Column="33" />
+      <File FileName="Tiny2d/SceneItems/Camera.cs" Line="210" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
+          <Node name="ExEn_ios" expanded="True" />
+          <Node name="ExEnCore_ios" expanded="True" />
           <Node name="Tiny2d_ios" expanded="True">
             <Node name="SceneItems" expanded="True">
+              <Node name="TypeConverters" expanded="True" />
               <Node name="Camera.cs" selected="True" />
             </Node>
           </Node>

@@ -306,7 +306,7 @@ namespace Tiny2d
 		
 		public virtual void Visit() 
 		{
-			if (!Visible) 
+			if (!_isVisible) 
 			{
 				return;
 			}
