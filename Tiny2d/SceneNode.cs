@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Tiny2d
 {
-	public class BaseObject
+	public class SceneNode
 	{
 		#region Fields
 		private string _name;
@@ -32,9 +32,9 @@ namespace Tiny2d
 		private int _width;
 		private int _height;
 
-		private List<BaseObject> _children;
+		private List<SceneNode> _children;
 		private bool _isVisible;
-		private BaseObject _parent;
+		private SceneNode _parent;
 		private object _userData;
 
 		#endregion
@@ -135,7 +135,7 @@ namespace Tiny2d
 			set { _isVisible = value;}
 		}
 
-		public BaseObject Parent
+		public SceneNode Parent
 		{
 			get { return _parent;}
 			set { _parent = value;}
@@ -148,12 +148,12 @@ namespace Tiny2d
 		}
 
 
-		public List<BaseObject> Children {
+		public List<SceneNode> Children {
 			get { return _children; }
 		}
 		#endregion
 
-		public BaseObject(){
+		public SceneNode(){
 			_name = "";
 			_id = 0;
 			_tag = TAG_INVALID;
@@ -171,19 +171,19 @@ namespace Tiny2d
 			_height = 0;
 			_isVisible = true;
 
-			_children = new List<BaseObject>();
+			_children = new List<SceneNode>();
 			_parent = null;
 			_userData = null;
 		}
 
 		public void CleanUp() 
 		{
-			foreach (BaseObject child in _children) {
+			foreach (SceneNode child in _children) {
 				child.CleanUp();
 			}
 		}
 
-		public virtual BaseObject AddChild(BaseObject child) 
+		public virtual SceneNode AddChild(SceneNode child) 
 		{
 			if (child == null) 
 			{
@@ -206,14 +206,14 @@ namespace Tiny2d
 			return this;
 		}
 
-		private void InsertChild(BaseObject child) 
+		private void InsertChild(SceneNode child) 
 		{
 			int i = 0;
 			bool added = false;
 
 			int z = child.ZOrder;
 
-			foreach (BaseObject node in _children)
+			foreach (SceneNode node in _children)
 			{
 				if (node.ZOrder > z) 
 				{
@@ -233,7 +233,7 @@ namespace Tiny2d
 		}
 		
 		
-		public virtual void RemoveChild(BaseObject child, bool cleanup) 
+		public virtual void RemoveChild(SceneNode child, bool cleanup) 
 		{
 			if (child != null) 
 			{
@@ -252,7 +252,7 @@ namespace Tiny2d
 		public void RemoveAllChildren(bool cleanup) 
 		{
 
-			_children.ForEach(delegate(BaseObject child) 
+			_children.ForEach(delegate(SceneNode child) 
 			               {
 				if(_isRunning) 
 				{
@@ -269,7 +269,7 @@ namespace Tiny2d
 			_children.Clear();
 		}
 		
-		private void DetachChild(BaseObject child, bool cleanup) {
+		private void DetachChild(SceneNode child, bool cleanup) {
 			if (_isRunning) 
 			{
 				child.OnExit();
@@ -285,10 +285,10 @@ namespace Tiny2d
 			_children.Remove(child);
 		}
 		
-		public BaseObject GetChildByTag(int tag) 
+		public SceneNode GetChildByTag(int tag) 
 		{
-			BaseObject result = null;
-			foreach (BaseObject node in _children)
+			SceneNode result = null;
+			foreach (SceneNode node in _children)
 			{
 				if(node.Tag == tag)
 				{
@@ -311,7 +311,7 @@ namespace Tiny2d
 				return;
 			}
 			
-			foreach (BaseObject child in _children) 
+			foreach (SceneNode child in _children) 
 			{
 				if (child.ZOrder < 0)
 				{
@@ -325,7 +325,7 @@ namespace Tiny2d
 			
 			Draw();
 			
-			foreach (BaseObject child in _children) 
+			foreach (SceneNode child in _children) 
 			{
 				if (child.ZOrder >= 0) 
 				{
@@ -338,7 +338,7 @@ namespace Tiny2d
 		
 		public virtual void OnEnter() 
 		{
-			foreach (BaseObject child in _children) 
+			foreach (SceneNode child in _children) 
 			{
 				child.OnEnter();
 			}
@@ -347,7 +347,7 @@ namespace Tiny2d
 
 		public void OnEnterTransitionDidFinish() 
 		{
-			foreach (BaseObject child in _children) 
+			foreach (SceneNode child in _children) 
 			{
 				child.OnEnterTransitionDidFinish();
 			}
@@ -356,7 +356,7 @@ namespace Tiny2d
 		public virtual void OnExit() 
 		{
 			_isEnable = false;
-			foreach (BaseObject child in _children) 
+			foreach (SceneNode child in _children) 
 			{
 				child.OnExit();
 			}
