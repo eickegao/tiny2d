@@ -7,11 +7,8 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using IceCream.Components;
 using System.Xml.Serialization;
 using System.Xml;
-using IceCream.SceneItems;
-using IceCream.SceneItems.AnimationClasses;
 
 namespace Tiny2d
 {
@@ -23,8 +20,6 @@ namespace Tiny2d
 		#region Fields
 		
 		int _nextId = 0;
-		internal List<SceneItem> _itemsToRegister = new List<SceneItem>();
-		private List<Camera> _activeCameras = new List<Camera>();
 		private Color _clearColor = Color.CornflowerBlue;
 		private bool _willRenderNotActive = true;
 		
@@ -43,12 +38,6 @@ namespace Tiny2d
 		{ 
 			get; 
 			set; 
-		}
-
-		public List<Camera> ActiveCameras
-		{
-			get { return _activeCameras; }
-			set { _activeCameras = value; }
 		}
 
 		public Color ClearColor
@@ -70,219 +59,9 @@ namespace Tiny2d
 		#endregion
 		
 		#region Methods
-		
-		internal void RegisterItems()
-		{
-			for (int i = 0; i < _itemsToRegister.Count; i++)
-			{
-				SceneItem item = _itemsToRegister[i];
-				AddToSceneItems(item);
-				item.OnRegister();
-				_itemsToRegister.RemoveAt(i);
-				i--;
-			}
-			
-		}
-		
-		internal void AddToSceneItems(SceneItem item)
-		{
-			item.id = GetNewID();
-			SceneItems.Add(item);
-		}
-		
-		private int GetNewID()
-		{
-			_nextId++;
-			return _nextId;
-		}
-		
-		internal void Unload()
-		{
-			for (int i = 0; i < SceneItems.Count; i++)
-			{
-				SceneItems[i].OnUnRegister();
-			}
-			foreach (var item in SceneComponents)
-			{
-				item.OnUnRegister();
-			}
-		}
 
-		public void RegisterSceneItemNow(SceneItem sceneItem)
-		{
-			if (sceneItem.Name.Equals(string.Empty))
-				throw new ArgumentException("Scene item must have a name set");
-			sceneItem.IsTemplate = false;
-			sceneItem.SceneParent = this;
-			
-			AddToSceneItems(sceneItem);
-			sceneItem.OnRegister();
-		}
 		
 
-		public void RegisterSceneItem(SceneItem sceneItem)
-		{
-			if (sceneItem.Name.Equals(string.Empty))
-				throw new ArgumentException("Scene item must have a name set");
-			sceneItem.IsTemplate = false;
-			sceneItem.SceneParent = this;
-			_itemsToRegister.Add(sceneItem);
-		}
-
-		public override Material LoadMaterial(string location, string name)
-		{
-			Material _material = new Material();
-			_material.Name = name;
-			_material.Filename = location;
-			_material.Texture = _content.Load<Texture2D>(location);
-			Materials.Add(_material);
-			return _material;
-		}
-
-		public SceneItem GetTemplate(string name)
-		{
-			foreach (SceneItem _obj in TemplateItems)
-			{
-				if (_obj.Name == name && _obj.IsTemplate)
-					return _obj;
-			}
-			foreach (SceneItem _obj in SceneManager.GlobalDataHolder.TemplateItems)
-			{
-				if (_obj.Name == name && _obj.IsTemplate)
-				{
-					return _obj;
-				}
-			}
-			return null;
-		}
-
-		public SceneItem CreateCopy(string name)
-		{
-			SceneItem item = GetTemplate(name);
-			if (item != null)
-			{                
-				return (SceneItem)CreateNewInstaceCopyOf(item);
-			}
-			else
-			{
-				return null;
-			}
-		}
-		
-
-		public SceneItem CreateNewInstaceCopyOf(SceneItem item)
-		{
-			SceneItem copy = (SceneItem)item.GetType().Assembly.CreateInstance(item.GetType().FullName);
-			item.CopyValuesTo(copy);
-			return copy;
-		}
-
-		public T CreateCopy<T>(string name) where T : SceneItem, new()
-		{        
-			T _newObject = new T();
-			foreach (SceneItem _obj in TemplateItems)
-			{
-				if (_obj.Name == name && _obj.IsTemplate)
-				{
-					T _tmpObject = new T();// _obj as T;
-					_obj.CopyValuesTo(_newObject as SceneItem);
-					_newObject.IsTemplate = false;
-					_newObject.Components.Clear();
-					foreach (IceComponent _comp in _obj.Components)
-					{
-						_newObject.AddComponent((IceComponent)_comp.GetCopy());
-					}                    
-					return _newObject as T;
-				}
-			}
-			foreach (SceneItem _obj in SceneManager.GlobalDataHolder.TemplateItems)
-			{
-				if (_obj.Name == name && _obj.IsTemplate)
-				{
-					T _tmpObject = new T();// _obj as T;
-					_obj.CopyValuesTo(_newObject as SceneItem);
-					_newObject.IsTemplate = false;
-					_newObject.Components.Clear();
-					foreach (IceComponent _comp in _obj.Components)
-					{
-						_newObject.AddComponent((IceComponent)_comp.GetCopy());
-					}
-					return _newObject as T;
-				}
-			}
-			throw new ArgumentException("The template of name " + name + " cannot be found");
-		}
-
-		public void AddTemplate(SceneItem sceneItem)
-		{
-			sceneItem.IsTemplate = true;
-			TemplateItems.Add(sceneItem);
-		}
-		
-		internal void RemoveItems()
-		{
-			for (int i = 0; i < SceneItems.Count; i++)
-			{
-				if (SceneItems[i].MarkForDelete)
-				{
-					SceneItems[i].OnUnRegister();
-					SceneItems[i].SceneParent = null;
-					SceneItems.RemoveAt(i);
-					i--;
-				}
-			}
-		}
-
-		public SceneItem GetSceneItem(string name)
-		{
-			foreach (SceneItem _obj in SceneItems)
-			{
-				if (_obj.Name == name && !_obj.IsTemplate)
-				{
-					return _obj;
-				}
-			}
-			throw new ArgumentException("SceneItem with the name " + name + " cannot be found");
-		}
-
-		public T GetComponent<T>() where T : IceSceneComponent
-		{
-			T local = default(T);
-			foreach (IceSceneComponent component in SceneComponents)
-			{
-				local = component as T;
-				if (local != null)
-				{
-					return local;
-				}
-			}
-			return null;
-		}
-
-		public T GetSceneItem<T>(string name) where T : SceneItem
-		{
-			T local = default(T);
-			
-			foreach (SceneItem _obj in SceneItems)
-			{
-				if (_obj.Name == name && !_obj.IsTemplate)
-				{
-					local = _obj as T;
-					if (local != null)
-					{
-						return local;
-					}
-				}
-			}
-			return null;
-		}
-		
-
-		public void AddComponent(IceSceneComponent component)
-		{
-			component.SetOwner(this);
-			SceneComponents.Add(component);
-		}
 		
 		#endregion        
 	}    
