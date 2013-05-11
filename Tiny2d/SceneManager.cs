@@ -12,11 +12,7 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 using System.Globalization;
-using IceCream.Attributes;
-using IceCream.Components;
-using IceCream.Drawing;
-using IceCream.Serialization;
-using IceCream.SceneItems;
+
 
 namespace Tiny2d
 {
@@ -25,12 +21,9 @@ namespace Tiny2d
 		#region Static Fields
 		
 		internal static List<Assembly> _assemblies;
-		private static IceScene _activeScene;
-		private static List<IceScene> _scenes;
+		private static GameScene _activeScene;
+		private static List<GameScene> _scenes;
 		private static ContentManager _globalcontent;
-		private static GlobalDataHolder _globalDataHolder;
-		private static List<Material> _embeddedMaterials = new List<Material>();
-		private static List<IceFont> _embeddedFonts = new List<IceFont>();
 		
 		#endregion
 		
